@@ -2,7 +2,7 @@ FROM node:latest as builder
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
-COPY . .
+COPY . /usr/src/app
 RUN npm run build
 
 FROM nginx:latest
